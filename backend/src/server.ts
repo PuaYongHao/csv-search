@@ -7,17 +7,18 @@ import mongoose from "mongoose";
 
 dotenv.config();
 
+// Set the network port
+const port = process.env.PORT;
+const database_url = process.env.DATABASE_URL ?? "";
+
 mongoose
-  .connect(process.env.DATABASE_URL ?? "")
+  .connect(database_url)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
 const app = express();
 app.use(cors());
-app.use(bodyParser.json({limit:"5mb"}));
-
-// Set the network port
-const port = process.env.PORT ?? 3000;
+app.use(bodyParser.json({ limit: "5mb" }));
 
 // Load the /csv routes
 app.use("/csv", CSVRouter);
