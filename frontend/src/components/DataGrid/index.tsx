@@ -19,7 +19,6 @@ const DataGridComponent = ({ columns, rows, ...props }: DataGridComponentProps) 
                 getRowId={(row: GridValidRowModel) => row.id}
                 className="data_grid"
                 pageSizeOptions={DEFAULT_PAGE_SIZE_OPTIONS}
-                autosizeOnMount
                 disableRowSelectionOnClick
                 {...props}
             />

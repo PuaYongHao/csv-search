@@ -35,27 +35,27 @@ const CSVSearchTableContent = () => {
             {
                 field: CSVTableFieldsEnum.postId,
                 headerName: CSVTableFieldsHeader.postId,
-                flex: 0.1,
+                flex: 0.05,
             },
             {
                 field: CSVTableFieldsEnum.id,
                 headerName: CSVTableFieldsHeader.id,
-                flex: 0.1,
+                flex: 0.05,
             },
             {
                 field: CSVTableFieldsEnum.name,
                 headerName: CSVTableFieldsHeader.name,
-                flex: 0.2,
+                flex: 0.25,
             },
             {
                 field: CSVTableFieldsEnum.email,
                 headerName: CSVTableFieldsHeader.email,
-                flex: 0.2,
+                flex: 0.15,
             },
             {
                 field: CSVTableFieldsEnum.body,
                 headerName: CSVTableFieldsHeader.body,
-                flex: 0.4,
+                flex: 0.5,
             },
         ],
         [],
@@ -76,28 +76,31 @@ const CSVSearchTableContent = () => {
         handleOpenDialog(DialogStateEnum.uploadFile);
     }, [handleOpenDialog]);
 
-    const handleClickUploadCSV = React.useCallback(async (files?: FileList) => {
-        if (!files || !files.length) return;
-        const file = files[0];
-        // Parse the CSV file
-        Papa.parse(file, {
-            header: true, // Treat the first row as headers
-            complete: async (result: unknown) => {
-                if (isPapaParseResult(result)) {
-                    // Filter out rows which has empty value
-                    const filteredData = result.data?.filter((row) =>
-                        Object.values(row).every((value) => value !== ""),
-                    );
-                    const jsonData = { data: filteredData };
-                    await postCSVData(jsonData);
-                    await refreshCSV();
-                }
-            },
-            error: (_error: unknown) => {
-                enqueueSnackbar("Error parsing CSV file.", { variant: "error" });
-            },
-        });
-    }, []);
+    const handleClickUploadCSV = React.useCallback(
+        async (files?: FileList) => {
+            if (!files || !files.length) return;
+            const file = files[0];
+            // Parse the CSV file
+            Papa.parse(file, {
+                header: true, // Treat the first row as headers
+                complete: async (result: unknown) => {
+                    if (isPapaParseResult(result)) {
+                        // Filter out rows which has empty value
+                        const filteredData = result.data?.filter((row) =>
+                            Object.values(row).every((value) => value !== ""),
+                        );
+                        const jsonData = { data: filteredData };
+                        await postCSVData(jsonData);
+                        await refreshCSV();
+                    }
+                },
+                error: (_error: unknown) => {
+                    enqueueSnackbar("Error parsing CSV file.", { variant: "error" });
+                },
+            });
+        },
+        [refreshCSV],
+    );
 
     const CustomToolbar = () => {
         return (
