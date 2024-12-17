@@ -1,10 +1,11 @@
 import React from "react";
 
 import { getCSVData } from "../services/domain/csv";
-import { CSVData } from "../types/csv";
+import { CSVDataBody } from "../types/csv";
 
 interface CSVContextInterface {
-    CSVFileData: CSVData;
+    CSVFileData: CSVDataBody;
+    refreshCSV: () => Promise<void>;
 }
 const CSVContext = React.createContext({} as CSVContextInterface);
 
@@ -13,7 +14,7 @@ type CSVContextProviderProps = {
 };
 const CSVContextProvider = ({ children }: CSVContextProviderProps) => {
     // Hooks
-    const [CSVFileData, setCSVFileData] = React.useState<CSVData>({} as CSVData);
+    const [CSVFileData, setCSVFileData] = React.useState<CSVDataBody>({} as CSVDataBody);
 
     const refreshCSV = async () => {
         return await getCSVData(true).then((res) => {
@@ -27,7 +28,7 @@ const CSVContextProvider = ({ children }: CSVContextProviderProps) => {
         refreshCSV();
     }, []);
 
-    return <CSVContext.Provider value={{ CSVFileData }}>{children}</CSVContext.Provider>;
+    return <CSVContext.Provider value={{ CSVFileData, refreshCSV }}>{children}</CSVContext.Provider>;
 };
 
 export { CSVContext, CSVContextProvider };
