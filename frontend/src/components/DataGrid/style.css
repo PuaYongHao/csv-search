@@ -1,19 +1,19 @@
 .data_grid_box {
-  height: auto;
+    height: auto;
 }
 
 .data_grid {
-  background: white;
-  border: 1px solid #e0e0e0;
+    background: white;
+    border: 1px solid #e0e0e0;
 }
 
 .data_grid .MuiDataGrid-columnHeaderTitle {
-  overflow: visible;
-  line-height: 1.25rem;
-  white-space: normal;
-  text-align: center;
+    overflow: visible;
+    line-height: 1.25rem;
+    white-space: normal;
+    text-align: center;
 }
 
 .data_grid .MuiDataGrid-toolbarContainer {
-  padding: 4.5px;
+    padding: 4.5px;
 }

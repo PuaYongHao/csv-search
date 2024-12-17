@@ -1,4 +1,3 @@
 export enum DialogStateEnum {
-  uploadFile = "uploadFile",
+    uploadFile = "uploadFile",
 }
-export type DialogStateEnumKeys = keyof typeof DialogStateEnum;

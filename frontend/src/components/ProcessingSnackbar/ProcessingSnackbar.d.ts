@@ -2,7 +2,7 @@
 import { VariantOverrides } from "notistack";
 
 declare module "notistack" {
-  interface VariantOverrides {
-    processing: true;
-  }
+    interface VariantOverrides {
+        processing: true;
+    }
 }
