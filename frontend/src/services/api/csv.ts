@@ -1,11 +1,10 @@
 import axios from "axios";
 
-import { baseHeaders } from "../../constants/api";
+import { baseHeaders, baseURL } from "../../constants/api";
 import { CSVDataBody } from "../../types/csv";
 
-// TODO
 const axios_api = axios.create({
-    baseURL: "http://localhost:27000",
+    baseURL,
     headers: { ...baseHeaders },
 });
 
