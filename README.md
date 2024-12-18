@@ -127,7 +127,7 @@ git clone https://github.com/PuaYongHao/csv-search.git
   "1","2","name2","email2","body2"
   ```
 
-  > Ensure that your csv file follow this structure. Two sample CSV files are available in the `frontend` directory.
+  > Ensure that your csv file follow this structure and two sample CSV files are available
 
 - Show/Hide Columns:
 
