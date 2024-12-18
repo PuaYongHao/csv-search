@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
-import { DataGrid, DataGridProps, GridColDef, GridValidRowModel } from "@mui/x-data-grid";
+import { DataGrid, DataGridProps, GridColDef, GridSlotsComponent, GridValidRowModel } from "@mui/x-data-grid";
+import { GridInitialStateCommunity } from "@mui/x-data-grid/models/gridStateCommunity";
 
 import { DEFAULT_PAGE_SIZE_OPTIONS } from "../../constants/table";
 
@@ -8,9 +9,11 @@ import "./style.css";
 type DataGridComponentProps = Partial<DataGridProps> & {
     columns: GridColDef<GridValidRowModel>[];
     rows: GridValidRowModel[];
+    initialState?: GridInitialStateCommunity;
+    slots?: Partial<GridSlotsComponent>;
 };
 
-const DataGridComponent = ({ columns, rows, ...props }: DataGridComponentProps) => {
+const DataGridComponent = ({ columns, rows, initialState, slots }: DataGridComponentProps) => {
     return (
         <Box className="data_grid_box">
             <DataGrid
@@ -20,7 +23,8 @@ const DataGridComponent = ({ columns, rows, ...props }: DataGridComponentProps) 
                 className="data_grid"
                 pageSizeOptions={DEFAULT_PAGE_SIZE_OPTIONS}
                 disableRowSelectionOnClick
-                {...props}
+                initialState={initialState}
+                slots={slots}
             />
         </Box>
     );

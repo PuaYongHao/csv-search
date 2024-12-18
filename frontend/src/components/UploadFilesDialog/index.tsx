@@ -47,7 +47,13 @@ const UploadFilesDialogComponent = ({
         <Dialog open={dialogState.uploadFile} onClose={handleCloseDialog}>
             <DialogTitle>{title ?? "Upload File(s)"}</DialogTitle>
             <DialogContent>
-                <input type="file" multiple={multiple ?? false} accept={accept} onChange={handleChange} />
+                <input
+                    placeholder="FileInput"
+                    type="file"
+                    multiple={multiple ?? false}
+                    accept={accept}
+                    onChange={handleChange}
+                />
             </DialogContent>
             <Button onClick={handleClickUpload}>Upload</Button>
         </Dialog>
