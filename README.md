@@ -1,6 +1,6 @@
 # CSV Search - Full Stack Application
 
-A full stack application to upload CSV file to database and search/filter CSV data using a robust backend and a modern, user-friendly frontend.
+A full stack application to upload CSV file to a database and search/filter CSV data using a robust backend and a modern, user-friendly frontend.
 
 ## Technology Stack
 
@@ -17,18 +17,19 @@ A full stack application to upload CSV file to database and search/filter CSV da
 - Node.js
 - Express.js
 - MongoDB
+- TypeScript
 - Jest
 - Supertest
 
 ## Getting Started
 
-Follow these steps to set up and run the application on your local machine.
+Follow the steps below to set up and run the application on your local machine.
 
 ### Prerequisites
 
 Ensure the following tools are installed on your system.
 
-1. Node.js. Verify installation with:
+1. Node.js and npm. Verify installation with:
 
 ```
 node -v
@@ -43,7 +44,7 @@ git --version
 
 ### Clone Repository
 
-1. Clone the project
+Clone the project using the following command:
 
 ```
 git clone https://github.com/PuaYongHao/csv-search.git
@@ -63,14 +64,14 @@ cd backend
 npm install
 ```
 
-3. Create a `.env` file in the `backend` directory and add the following:
+3. Create a `.env` file in the `backend` directory and add the following variables:
 
 ```
 PORT=9999
 DATABASE_URL=mongodb+srv://<db_username>:<db_password>@csv-search.mugt0.mongodb.net/
 ```
 
-> Replace <db_username> and <db_password> with MongoDB credentials with database access.
+> Replace <db_username> and <db_password> with MongoDB credentials
 
 4. Compile TypeScript files
 
@@ -100,7 +101,7 @@ cd frontend
 npm install
 ```
 
-3. Create a `.env` file in the `frontend` directory and add the following:
+3. Create a `.env` file in the `frontend` directory and add the following variables:
 
 ```
 VITE_PORT=9900
@@ -115,9 +116,10 @@ npm start
 
 5. Open your browser and navigate to `http://localhost:9900/`
 
-## CSV Format
+## Application Features and Instructions
 
-The application processes CSV files in the following format:
+1. Upload CSV Files:
+   Click the `UPLOAD` button to select and upload a CSV file. The application processes CSV files in the following format:
 
 ```
 "postId","id","name","email","body"
@@ -125,7 +127,28 @@ The application processes CSV files in the following format:
 "1","2","name2","email2","body2"
 ```
 
-> Make sure your csv files adhere to this structure
+> Ensure that your csv file follow this structure. Two sample CSV files are available in the `frontend` directory.
+
+2. Show/Hide Columns:
+   Click the `COLUMNS` button to toggle the visibility of specific columns
+
+3. Filter Data:
+   Click the `FILTERS` button to filter the CSV data
+
+4. Adjust Density:
+   Click the `DENSITY` button to switch between compact, standard, or comfortable views
+
+5. Export Data:
+   Click the `EXPORT` button to download the CSV data as a file or print it as a PDF
+
+6. Sort Columns:
+   Click the arrows next to column headers to sort the data in ascending/descending order
+
+7. Adjust Column Widths:
+   Drag column headers to resize the columns as needed
+
+8. Pagination:
+   Adjust the number of rows displayed per page using the dropdown in the footer and use the pagination controls to navigate between pages
 
 ## Run Tests
 
