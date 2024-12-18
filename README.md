@@ -16,6 +16,19 @@
 
 # Getting Started
 
+## Prerequisites
+
+Make sure you have the following installed
+
+1. Node.js. You can check your installation by running:
+
+```
+node -v
+npm -v
+```
+
+2. MongoDB
+
 ## Clone Repository
 
 1. Clone the repository

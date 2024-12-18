@@ -1,0 +1,17 @@
+{
+    "tabWidth": 4,
+    "printWidth": 120,
+    "importOrder": [
+        "^express$",
+        "^dotenv(.*)$",
+        "<THIRD_PARTY_MODULES>",
+        "^@(.*)$",
+        "^src/(.*)$",
+        "^../(.*)$",
+        "^./(.*)$"
+    ],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true,
+    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+    "endOfLine": "auto"
+}
