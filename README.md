@@ -1,104 +1,158 @@
-# Technology Stack
+# CSV Search - Full Stack Application
 
-## Frontend:
+A full stack application to upload CSV file to database and search/filter CSV data using a robust backend and a modern, user-friendly frontend.
+
+## Technology Stack
+
+### Frontend:
 
 - React
 - Vite
 - Material-UI
 - TypeScript
-- Jest
+- Vitest
 
-## Backend:
+### Backend:
 
 - Node.js
 - Express.js
 - MongoDB
+- Jest
+- Supertest
 
-# Getting Started
+## Getting Started
 
-## Prerequisites
+Follow these steps to set up and run the application on your local machine.
 
-Make sure you have the following installed
+### Prerequisites
 
-1. Node.js. You can check your installation by running:
+Ensure the following tools are installed on your system.
+
+1. Node.js. Verify installation with:
 
 ```
 node -v
 npm -v
 ```
 
-2. MongoDB
+2. Git. Verify installation with:
 
-## Clone Repository
+```
+git --version
+```
 
-1. Clone the repository
+### Clone Repository
+
+1. Clone the project
 
 ```
 git clone https://github.com/PuaYongHao/csv-search.git
 ```
 
-## Backend Setup
+### Backend Setup
 
-1. Install backend dependencies
+1. Navigate to the `backend` directory
 
 ```
 cd backend
+```
+
+2. Install dependencies
+
+```
 npm install
 ```
 
-2. Create a `.env` file in the `backend` directory and set the required environment variables
+3. Create a `.env` file in the `backend` directory and add the following:
 
 ```
 PORT=9999
 DATABASE_URL=mongodb+srv://<db_username>:<db_password>@csv-search.mugt0.mongodb.net/
 ```
 
-3. Compile TypeScript files
+> Replace <db_username> and <db_password> with MongoDB credentials with database access.
+
+4. Compile TypeScript files
 
 ```
 npm run build
 ```
 
-4. Run backend server
+5. Start the backend server
 
 ```
 npm start
 ```
 
-## Frontend Setup
+> The server will run on `http://localhost:9999`
 
-1. Install frontend dependencies
+### Frontend Setup
+
+1. Navigate to the `frontend` directory
 
 ```
 cd frontend
+```
+
+2. Install dependencies
+
+```
 npm install
 ```
 
-2. Create a `.env` file in the `frontend` directory and set the required environment variables
+3. Create a `.env` file in the `frontend` directory and add the following:
 
 ```
 VITE_PORT=9900
 VITE_BASE_URL=http://localhost:9999
 ```
 
-3. Run frontend server
+4. Start the frontend server
 
 ```
 npm start
 ```
 
-# Run Tests
+5. Open your browser and navigate to `http://localhost:9900/`
 
-1. To run tests for the backend
+## CSV Format
+
+The application processes CSV files in the following format:
+
+```
+"postId","id","name","email","body"
+"1","1","name1","email1","body1"
+"1","2","name2","email2","body2"
+```
+
+> Make sure your csv files adhere to this structure
+
+## Run Tests
+
+### Backend Tests
+
+1. Navigate to the `backend` directory
 
 ```
 cd backend
+```
+
+2. Run the tests
+
+```
 npm test
+```
+
+### Frontend Tests
+
+1. Navigate to the `frontend` directory
+
+```
+cd frontend
 ```
 
 2. To run tests for the frontend
 
 ```
-cd frontend
 npm test
 ```
