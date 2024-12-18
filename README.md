@@ -31,16 +31,16 @@ Ensure the following tools are installed on your system.
 
 1. Node.js and npm. Verify installation with:
 
-```
-node -v
-npm -v
-```
+   ```
+   node -v
+   npm -v
+   ```
 
 2. Git. Verify installation with:
 
-```
-git --version
-```
+   ```
+   git --version
+   ```
 
 ### Clone Repository
 
@@ -54,101 +54,108 @@ git clone https://github.com/PuaYongHao/csv-search.git
 
 1. Navigate to the `backend` directory
 
-```
-cd backend
-```
+   ```
+   cd backend
+   ```
 
 2. Install dependencies
 
-```
-npm install
-```
+   ```
+   npm install
+   ```
 
 3. Create a `.env` file in the `backend` directory and add the following variables:
 
-```
-PORT=9999
-DATABASE_URL=mongodb+srv://<db_username>:<db_password>@csv-search.mugt0.mongodb.net/
-```
+   ```
+   PORT=9999
+   DATABASE_URL=mongodb+srv://<db_username>:<db_password>@csv-search.mugt0.mongodb.net/
+   ```
 
-> Replace <db_username> and <db_password> with MongoDB credentials
+   > Replace <db_username> and <db_password> with MongoDB credentials
 
 4. Compile TypeScript files
 
-```
-npm run build
-```
+   ```
+   npm run build
+   ```
 
 5. Start the backend server
 
-```
-npm start
-```
+   ```
+   npm start
+   ```
 
-> The server will run on `http://localhost:9999`
+   > The server will run on `http://localhost:9999`
 
 ### Frontend Setup
 
 1. Navigate to the `frontend` directory
 
-```
-cd frontend
-```
+   ```
+   cd frontend
+   ```
 
 2. Install dependencies
 
-```
-npm install
-```
+   ```
+   npm install
+   ```
 
 3. Create a `.env` file in the `frontend` directory and add the following variables:
 
-```
-VITE_PORT=9900
-VITE_BASE_URL=http://localhost:9999
-```
+   ```
+   VITE_PORT=9900
+   VITE_BASE_URL=http://localhost:9999
+   ```
 
 4. Start the frontend server
 
-```
-npm start
-```
+   ```
+   npm start
+   ```
 
 5. Open your browser and navigate to `http://localhost:9900/`
 
 ## Application Features and Instructions
 
-1. Upload CSV Files:
-   Click the `UPLOAD` button to select and upload a CSV file. The application processes CSV files in the following format:
+- Upload CSV Files:
+  Click the `UPLOAD` button to select and upload a CSV file. The application processes CSV files in the following format:
 
-```
-"postId","id","name","email","body"
-"1","1","name1","email1","body1"
-"1","2","name2","email2","body2"
-```
+  ```
+  "postId","id","name","email","body"
+  "1","1","name1","email1","body1"
+  "1","2","name2","email2","body2"
+  ```
 
-> Ensure that your csv file follow this structure. Two sample CSV files are available in the `frontend` directory.
+  > Ensure that your csv file follow this structure. Two sample CSV files are available in the `frontend` directory.
 
-2. Show/Hide Columns:
-   Click the `COLUMNS` button to toggle the visibility of specific columns
+- Show/Hide Columns:
 
-3. Filter Data:
-   Click the `FILTERS` button to filter the CSV data
+  - Click the `COLUMNS` button to toggle the visibility of specific columns
 
-4. Adjust Density:
-   Click the `DENSITY` button to switch between compact, standard, or comfortable views
+- Filter Data:
 
-5. Export Data:
-   Click the `EXPORT` button to download the CSV data as a file or print it as a PDF
+  - Click the `FILTERS` button to filter the CSV data
 
-6. Sort Columns:
-   Click the arrows next to column headers to sort the data in ascending/descending order
+- Adjust Density:
 
-7. Adjust Column Widths:
-   Drag column headers to resize the columns as needed
+  - Click the `DENSITY` button to switch between compact, standard, or comfortable views
 
-8. Pagination:
-   Adjust the number of rows displayed per page using the dropdown in the footer and use the pagination controls to navigate between pages
+- Export Data:
+
+  - Click the `EXPORT` button to download the CSV data as a file or print it as a PDF
+
+- Sort Columns:
+
+  - Click the arrows next to column headers to sort the data in ascending/descending order
+
+- Adjust Column Widths:
+
+  - Drag column headers to resize the columns as needed
+
+- Pagination:
+  - Adjust the number of rows displayed per page using the dropdown in the footer
+  - Use the pagination controls to navigate between pages
 
 ## Run Tests
 
@@ -156,26 +163,26 @@ npm start
 
 1. Navigate to the `backend` directory
 
-```
-cd backend
-```
+   ```
+   cd backend
+   ```
 
 2. Run the tests
 
-```
-npm test
-```
+   ```
+   npm test
+   ```
 
 ### Frontend Tests
 
 1. Navigate to the `frontend` directory
 
-```
-cd frontend
-```
+   ```
+   cd frontend
+   ```
 
 2. To run tests for the frontend
 
-```
-npm test
-```
+   ```
+   npm test
+   ```
