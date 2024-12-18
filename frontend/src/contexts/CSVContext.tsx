@@ -17,7 +17,7 @@ const CSVContextProvider = ({ children }: CSVContextProviderProps) => {
     const [CSVFileData, setCSVFileData] = React.useState<CSVDataBody>({} as CSVDataBody);
 
     const refreshCSV = async () => {
-        return await getCSVData(true).then((res) => {
+        return await getCSVData(false).then((res) => {
             if (!res) return;
             setCSVFileData(res);
             return res;

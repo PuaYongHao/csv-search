@@ -117,7 +117,7 @@ const CSVSearchTableContent = () => {
         <>
             <DataGridComponent
                 columns={columns}
-                rows={rows}
+                rows={rows ?? []}
                 initialState={{
                     columns: { columnVisibilityModel },
                     pagination: { paginationModel },

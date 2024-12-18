@@ -8,7 +8,7 @@ export const getCSVData = async (hideSnackbar = true) => {
     return await CSVApi.getCSVData()
         .then((res) => {
             if (!hideSnackbar) enqueueSnackbar("CSV data is retrieved successfully.", { variant: "success" });
-            return res?.data || [];
+            return res?.data || {};
         })
         .catch((reason: unknown) => {
             enqueueSnackbar("An error was encountered while retrieving the CSV data. Please try again.", {
