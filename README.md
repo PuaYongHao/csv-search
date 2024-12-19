@@ -71,7 +71,15 @@ git clone https://github.com/PuaYongHao/csv-search.git
    DATABASE_URL=mongodb+srv://<db_username>:<db_password>@csv-search.mugt0.mongodb.net/
    ```
 
-   > Replace <db_username> and <db_password> with MongoDB credentials
+   > Replace <db_username> and <db_password> with MongoDB credentials.
+
+   #### Database Credentials
+
+   This section provides the temporary MongoDB credential for accessing the database.
+
+   - **Username**: temp_user
+   - **Password**: Txmt4kr4042yucko
+     > This account is valid until **26 December 2024**
 
 4. Compile TypeScript files
 
