@@ -79,7 +79,7 @@ git clone https://github.com/PuaYongHao/csv-search.git
 
    - **Username**: temp_user
    - **Password**: Txmt4kr4042yucko
-     > This account is valid until **26 December 2024**
+     > This account is valid until **2 January 2025**
 
 4. Compile TypeScript files
 
